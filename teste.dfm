@@ -21,10 +21,8 @@ object Form1: TForm1
     ActivePage = TabSheet1
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 843
     object TabSheet1: TTabSheet
       Caption = 'Teste 1'
-      ExplicitWidth = 835
       object Button1: TButton
         Left = 8
         Top = 95
@@ -79,7 +77,10 @@ object Form1: TForm1
     object TabSheet2: TTabSheet
       Caption = 'Teste 2'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
       ExplicitWidth = 835
+      ExplicitHeight = 0
       object Button2: TButton
         Left = 14
         Top = 43

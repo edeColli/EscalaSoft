@@ -141,8 +141,8 @@ var
   function canChange(l, c: integer): Boolean;
   begin
     Result := True;
-    limparMatrizVisitada(matrizVisitada);
 
+    limparMatrizVisitada(matrizVisitada);
 
     if hasConnectionAdjacent(l,c) then
       Exit(False);
@@ -193,7 +193,6 @@ begin
   getMatrizExemplo(outputMatriz, RadioGroup1.ItemIndex);
   MostrarMatriz(inputMatriz, StringGrid1);
 
-  limparMatrizVisitada(matrizVisitada);
   atualizarMatriz(outputMatriz);
   MostrarMatriz(outputMatriz, StringGrid2);
 end;
