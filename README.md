@@ -13,3 +13,8 @@ soma possível 3: [07, 03] => 7 + 3 = 10
 soma possível 4: [04, 15] => 4 + 15 = 19 
 soma possível 5: [04, 03] => 4 + 3 = 7 
 soma possível 6: [05, 03] => 5 + 3 = 8 
+
+* Ao executar o programa é apresentado um Formulário com um PageControl, que possui duas abas:
+* Na primeira aba, foi desenvolvido o primeiro algoritmo solicitado. Para este caso, deixei como default os 3 modelos de matriz apresentados no teste, que podem ser alternados escolhendo as opções pelo Radrio Button. Após escolher a matriz desejada, basta clicar no botão 1º algoritmo para que ele faça a devida conversão
+
+* Na segunda aba, foi desenvolvido o segundo algoritmo. Para este caso basta clicar no botão 2º algoritmo para que ele apresente o array dinamico, com números randomicos e faça a devida soma;
