@@ -47,6 +47,7 @@ object Form1: TForm1
         Width = 473
         Height = 159
         ColCount = 6
+        DefaultDrawing = False
         RowCount = 6
         TabOrder = 2
       end
@@ -77,10 +78,6 @@ object Form1: TForm1
     object TabSheet2: TTabSheet
       Caption = 'Teste 2'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 835
-      ExplicitHeight = 0
       object Button2: TButton
         Left = 14
         Top = 43

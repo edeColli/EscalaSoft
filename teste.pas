@@ -36,6 +36,8 @@ type
     procedure limparMatrizVisitada(Matriz: TVisited);
     procedure gerarMatriz;
     procedure LimparGrids;
+    procedure pintarDiferencas;
+    procedure restaurarCoresDefault;
     { Private declarations }
   public
     { Public declarations }
@@ -76,6 +78,7 @@ procedure TForm1.LimparGrids;
 begin
   LimparStringGrid(StringGrid1);
   LimparStringGrid(StringGrid2);
+  restaurarCoresDefault;
 end;
 
 procedure TForm1.limparMatrizVisitada(Matriz: TVisited);
@@ -195,6 +198,7 @@ begin
 
   atualizarMatriz(outputMatriz);
   MostrarMatriz(outputMatriz, StringGrid2);
+  pintarDiferencas;
 end;
 
 procedure TForm1.getMatrizExemplo(Matriz: TMatriz; iMatriz: integer);
@@ -239,6 +243,52 @@ begin
   begin
     for j := 0 to StringGrid.RowCount -1 do
       StringGrid.Cells[i,j] := '';
+  end;
+end;
+
+procedure TForm1.pintarDiferencas;
+var
+  i, j: Integer;
+begin
+  for i := 0 to 5 do
+  begin
+    for j := 0 to 5 do
+    begin
+      if StringGrid1.Cells[j, i] <> StringGrid2.Cells[j, i] then
+      begin
+        StringGrid2.Canvas.Brush.Color := clRed;
+        StringGrid2.Canvas.Font.Color := clBlack;
+        StringGrid2.Canvas.FillRect(StringGrid2.CellRect(j, i));
+        StringGrid2.Canvas.TextOut(StringGrid2.CellRect(j, i).Left + 2, StringGrid2.CellRect(j, i).Top + 2,
+                                    StringGrid2.Cells[j, i]);
+      end
+      else
+      begin
+        StringGrid2.Canvas.Brush.Color := clWhite;
+        StringGrid2.CAnvas.Font.Color := clBlack;
+        StringGrid2.Canvas.FillRect(StringGrid2.CellRect(j, i));
+        StringGrid2.Canvas.TextOut(StringGrid2.CellRect(j, i).Left + 2, StringGrid2.CellRect(j, i).Top + 2,
+                                    StringGrid2.Cells[j, i]);
+      end;
+    end;
+  end;
+end;
+
+procedure TForm1.restaurarCoresDefault;
+var
+  i: Integer;
+  j: Integer;
+begin
+  for i := 0 to 5 do
+  begin
+    for j := 0 to 5 do
+    begin
+      StringGrid2.Canvas.Brush.Color := clWhite;
+      StringGrid2.CAnvas.Font.Color := clBlack;
+      StringGrid2.Canvas.FillRect(StringGrid2.CellRect(j, i));
+      StringGrid2.Canvas.TextOut(StringGrid2.CellRect(j, i).Left + 2, StringGrid2.CellRect(j, i).Top + 2,
+                                  StringGrid2.Cells[j, i]);
+    end;
   end;
 end;
 
